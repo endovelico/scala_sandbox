@@ -3,9 +3,14 @@ ThisBuild / scalaVersion := "2.13.12"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "nfl-player-service",
+    name := "scala_sandbox",
     libraryDependencies ++= Seq(
+      // Spring Boot dependencies
       "org.springframework.boot" % "spring-boot-starter-web" % "3.2.5",
-      "org.springframework.boot" % "spring-boot-starter-test" % "3.2.5" % Test
+      "org.springframework.boot" % "spring-boot-starter-test" % "3.2.5" % Test,
+
+      // Explicit JUnit Jupiter dependencies
+      "org.junit.jupiter" % "junit-jupiter-api" % "5.10.0" % Test,
+      "org.junit.jupiter" % "junit-jupiter-engine" % "5.10.0" % Test
     )
   )
