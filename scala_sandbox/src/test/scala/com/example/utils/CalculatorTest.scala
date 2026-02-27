@@ -18,12 +18,34 @@ class CalculatorTest {
   }
 
   @Test
-  def testSum0():Unit = {}
+  def testSum0():Unit = {
+
+    val c:Calculator  = new Calculator();
+    val result:Int = c.sum(0, 0);
+
+    assertNotNull(c);
+    assertEquals(0, result);
+
+  }
 
   @Test
-  def testMultiplyOk():Unit = {}
+  def testMultiplyOk():Unit = {
+
+    val c:Calculator = new Calculator();
+    val result:Int = c.multiply(2, 3);
+
+    assertNotNull(c);
+    assertEquals(6, result);
+  }
 
   @Test
-  def testMupltiply0():Unit = {}
+  def testMupltiply0():Unit = {
+
+    val c:Calculator = new Calculator();
+    val result:Int = c.multiply(5, 0);
+
+    assertNotNull(c);
+    assertEquals(4, result);
+  }
 
 }
