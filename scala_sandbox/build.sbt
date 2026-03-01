@@ -5,6 +5,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "scala_sandbox",
     libraryDependencies ++= Seq(
+      "org.typelevel" %% "cats-core" % "2.10.0",
       "com.typesafe.akka" %% "akka-actor-typed" % "2.8.0",
       "com.typesafe.akka" %% "akka-stream" % "2.8.0",
       "org.springframework.boot" % "spring-boot-starter-web" % "3.2.5",
