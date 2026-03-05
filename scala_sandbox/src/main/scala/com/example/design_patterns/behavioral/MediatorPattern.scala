@@ -1,6 +1,6 @@
 package com.example.design_patterns.behavioral
 
-class MediatorPattern {
+object MediatorPattern extends App {
 
   trait Mediator {
     def notify(sender: Colleague, event: String): Unit
@@ -29,9 +29,14 @@ class MediatorPattern {
     def registerTextBox(t: TextBox): Unit = textBox = Some(t)
 
     override def notify(sender: Colleague, event: String): Unit = sender match {
-      case `button`.get => textBox.foreach(_.receive(s"Button triggered: $event"))
-      case `textBox`.get => button.foreach(_.receive(s"TextBox triggered: $event"))
-      case _ => println("Unknown sender")
+      case s if button.contains(s) =>
+        textBox.foreach(_.receive(s"Button triggered: $event"))
+
+      case s if textBox.contains(s) =>
+        button.foreach(_.receive(s"TextBox triggered: $event"))
+
+      case _ =>
+        println("Unknown sender")
     }
   }
 
@@ -43,8 +48,5 @@ class MediatorPattern {
   mediator.registerTextBox(textBox)
 
   button.send("Click")
-  // Output: TextBox received event: Button triggered: Click
-
   textBox.send("TextChanged")
-  // Output: Button received event: TextBox triggered: TextChanged
 }

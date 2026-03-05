@@ -1,6 +1,6 @@
 package com.example.basics
 
-class CollectionStuff {
+object CollectionStuff extends App {
 
   // Array Stuff
   val numbers = Array(1, 2, 3, 4, 5)
@@ -40,4 +40,31 @@ class CollectionStuff {
   val evenNumbers = numbers.filter(n => n % 2 == 0)
   // Using reduce to calculate the sum
   val sum = numbers.reduce((x, y) => x + y)
+
+  val users = List("Alice", "Charlie", "Bob", "Eve")
+  val result = users
+    .filter(name => name.length > 4)
+    .map(name => name.toUpperCase)
+    .distinct;
+
+  println(result);
+
+  val scores = List(List(10, 20, 30), List(15, 25, 35), List(20, 30, 40))
+  val totalScores = scores
+    .map(studentScores => studentScores.reduce((a, b) => a + b));
+
+  println(totalScores)
+
+  case class Employee(name:String, age:Int, projects:List[String])
+
+  val employees = List(
+    Employee("Alice", 35, List("Project A", "Project B")),
+    Employee("Bob", 28, List("Project C", "Project A")),
+    Employee("Charlie", 40, List("Project D, Project A"))
+  )
+
+  val employee_result = employees.filter(_.age > 30).flatMap(_.projects).map(_.toUpperCase()).distinct;
+
+  println(employee_result)
+
 }
