@@ -1,4 +1,4 @@
-package com.example.advanced.reftail.appending_operators
+package com.example.advanced.reftail
 
 class AppendingOperatorExamples {
 

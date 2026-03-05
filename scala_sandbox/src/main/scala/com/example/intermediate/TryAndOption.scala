@@ -20,7 +20,8 @@ object TryAndOption extends App {
   println(result)
   // Output: List(Some(10), Some(20), None, Some(30))
 
-  import scala.util.{Try, Success, Failure}def readData(filePath: String): Try[String] =
+  import scala.util.{Try, Success, Failure}
+  def readData(filePath: String): Try[String] =
     Try(scala.io.Source.fromFile(filePath).mkString)
   def parseData(data: String): Option[Int] =
     try {

@@ -19,7 +19,7 @@ object FutureOnCompleteOnError extends App {
     throw new RuntimeException("Calculation failed")
   }
   val recoveredFuture: Future[Int] = futureWithError.recover {
-    case e: RuntimeException => 100  // Fallback value
+    case e: RuntimeException => 100 // Fallback value
   }
   recoveredFuture.onComplete {
     case Success(value) => println(s"Recovered value: $value")case Failure(exception) => println(s"Error: $exception")
@@ -29,7 +29,7 @@ object FutureOnCompleteOnError extends App {
     throw new IllegalArgumentException("Invalid argument")
   }
   val recoveredFutureWith: Future[Int] = futureWithError2.recoverWith {
-    case e: IllegalArgumentException => Future.successful(200)  // Return a new Future
+    case e: IllegalArgumentException => Future.successful(200) // Return a new Future
   }
   recoveredFutureWith.onComplete {
     case Success(value) => println(s"Recovered value: $value")
@@ -40,7 +40,7 @@ object FutureOnCompleteOnError extends App {
     throw new Exception("Primary Future failed")
   }
   val fallbackFuture: Future[Int] = Future {
-    42  // Fallback value
+    42// Fallback value
   }
   val resultFuture: Future[Int] = primaryFuture.fallbackTo(fallbackFuture)
   resultFuture.onComplete {
@@ -54,7 +54,7 @@ object FutureOnCompleteOnError extends App {
     Future { 20 }
   )
   val handledFutures: List[Future[Int]] = futures.map(_.recover {
-    case _: Exception => 0  // Recover with a default value
+    case _: Exception => 0 // Recover with a default value
   })
   Future.sequence(handledFutures).onComplete {
     case Success(results) => println(s"Results: $results")

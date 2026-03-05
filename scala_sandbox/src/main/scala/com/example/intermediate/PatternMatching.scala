@@ -12,12 +12,12 @@ object PatternMatching extends App {
     case _ => println("Unknown person")
   }
 
-  val person2 = Person("John", Address("London", "UK"))
+  /*val person2 = Person("John", Address("London", "UK"))
   person2 match {
     case Person(name, Address(city, country)) =>
       println(s"Name: $name, City: $city, Country: $country")
     case _ => println("Unknown person")
-  }
+  }*/
 
   person match {
     case Person(name, age) if age >= 18 =>
