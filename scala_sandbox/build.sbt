@@ -7,7 +7,9 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-core" % "2.10.0",
       "com.typesafe.akka" %% "akka-actor-typed" % "2.8.0",
+      "com.typesafe.akka" %% "akka-actor" % "2.8.5",
       "com.typesafe.akka" %% "akka-stream" % "2.8.0",
+      "com.typesafe.akka" %% "akka-http" % "10.5.3",
       "org.springframework.boot" % "spring-boot-starter-web" % "3.2.5",
       "org.springframework.boot" % "spring-boot-starter-test" % "3.2.5" % Test,
       "org.junit.jupiter" % "junit-jupiter-api" % "5.10.0" % Test,
