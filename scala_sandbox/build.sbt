@@ -9,7 +9,11 @@ lazy val root = (project in file("."))
       "com.typesafe.akka" %% "akka-actor-typed" % "2.8.0",
       "com.typesafe.akka" %% "akka-actor" % "2.8.5",
       "com.typesafe.akka" %% "akka-stream" % "2.8.0",
+      "ch.qos.logback" % "logback-classic" % "1.4.14", // or another SLF4J backend
       "com.typesafe.akka" %% "akka-http" % "10.5.3",
+      "dev.optics" %% "monocle-core"  % "3.3.0",   // core lenses & optics
+      "dev.optics" %% "monocle-macro" % "3.3.0",    // automatic lens generation
+      "net.databinder.dispatch" %% "dispatch-core" %% "0.11.0",
       "org.springframework.boot" % "spring-boot-starter-web" % "3.2.5",
       "org.springframework.boot" % "spring-boot-starter-test" % "3.2.5" % Test,
       "org.junit.jupiter" % "junit-jupiter-api" % "5.10.0" % Test,

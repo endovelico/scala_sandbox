@@ -10,6 +10,7 @@ class PersonBuilder {
   var firstName = ""
   var lastName = ""
   var age = 0
+  var address = ""
   def setFirstName(firstName: String): PersonBuilder = {
     this.firstName = firstName
     this
